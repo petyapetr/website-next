@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+[data-theme="light"] {
+	--clr-bg: #fff;
+	--clr-fg: #000;
+}
+
+[data-theme="dark"] {
+	--clr-bg: #000;
+	--clr-fg: #fff;
+}
+
+@theme {
+	--color-*: initial;
+	--color-background: var(--clr-bg);
+	--color-foreground: var(--clr-fg);
+
+	--font-weight-*: initial;
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 700;
+}
+
+@utility grid-rows-main {
+	grid-template-rows: auto 1fr auto;
+}
