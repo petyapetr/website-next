@@ -3,17 +3,30 @@
 @variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 [data-theme="light"] {
-	--clr-bg: #fff;
-	--clr-fg: #000;
+	--clr-bg: var(--color-gray-100);
+	--clr-fg: var(--color-gray-900);
 }
 
 [data-theme="dark"] {
-	--clr-bg: #000;
-	--clr-fg: #fff;
+	--clr-bg: var(--color-gray-900);
+	--clr-fg: var(--color-gray-100);
 }
 
 @theme {
 	--color-*: initial;
+	/* --color-black: #000; */
+	/* --color-white: #fff; */
+	/* --color-gray-50: oklch(0.985 0.002 247.839); */
+	--color-gray-100: oklch(0.967 0.003 264.542);
+	/* --color-gray-200: oklch(0.928 0.006 264.531); */
+	/* --color-gray-300: oklch(0.872 0.01 258.338); */
+	/* --color-gray-400: oklch(0.707 0.022 261.325); */
+	/* --color-gray-500: oklch(0.551 0.027 264.364); */
+	/* --color-gray-600: oklch(0.446 0.03 256.802); */
+	/* --color-gray-700: oklch(0.373 0.034 259.733); */
+	/* --color-gray-800: oklch(0.278 0.033 256.848); */
+	--color-gray-900: oklch(0.21 0.034 264.665);
+	/* --color-gray-950: oklch(0.13 0.028 261.692); */
 	--color-background: var(--clr-bg);
 	--color-foreground: var(--clr-fg);
 
@@ -23,6 +36,35 @@
 	--font-weight-bold: 700;
 }
 
+@layer base {
+	h1 {
+		font-size: var(--text-2xl);
+		font-weight: var(--font-weight-bold);
+	}
+
+	h2 {
+		font-size: var(--text-xl);
+		font-weight: var(--font-weight-bold);
+	}
+
+	h3 {
+		font-weight: var(--font-weight-medium);
+	}
+
+	p {
+		max-width: 40rem;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}
+
 @utility grid-rows-main {
 	grid-template-rows: auto 1fr auto;
+}
+
+@utility reverse {
+	background: var(--color-foreground);
+	color: var(--color-background);
 }
