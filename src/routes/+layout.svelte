@@ -1,6 +1,7 @@
 <script lang="ts">
 	import "$lib/css/app.css";
-	import {onMount} from "svelte";
+	import Footer from "$lib/components/Footer.svelte";
+	import Header from "$lib/components/Header.svelte";
 	import type {Snippet} from "svelte";
 	import Banner from "$lib/components/Banner.svelte";
 
@@ -15,5 +16,5 @@
 		{@render children()}
 	</div>
 
-	<footer>footer</footer>
+	<Footer />
 </main>
